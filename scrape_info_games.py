@@ -18,7 +18,7 @@ class scrape_info_game:
         script = info[2]
         jsonStr = script.text.strip()
         jsonStr = jsonStr.split(';\n')
-        jsonStr = jsonStr[9].strip()
+        jsonStr = jsonStr[10].strip()
         info = json.loads(jsonStr[23:])
 
         json_game = {

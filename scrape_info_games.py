@@ -23,6 +23,7 @@ class scrape_info_game:
 
         json_game = {
                 "url" : self.url,
+                "rank" : info['item']['rankinfo'][0]['rank'],
                 "id" : info['item']['id'],
                 "name" : info['item']['name'],
                 "images" : info['item']['images'],

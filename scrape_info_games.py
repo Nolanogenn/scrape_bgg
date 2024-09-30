@@ -70,5 +70,6 @@ if __name__ == '__main__':
 
     info = scrape_info_game("https://boardgamegeek.com/boardgame/174430/gloomhaven")
     info = info.get_info()
+    pprint.pprint(info)
     
 

@@ -25,9 +25,12 @@ class scrape_bgg:
         soup = BeautifulSoup(page.content, 'html.parser')
         table = soup.find('table', attrs = {"class" : "collection_table"})
         self.rows = table.find_all('tr')
-        pages_to_scrape = range(1,6) 
+        pages_to_scrape = range(2,6) 
         for page in pages_to_scrape:
             additional_url = url + f"/page/{page}"
+            page = requests.get(additional_url)
+            soup = BeautifulSoup(page.content, 'html.parser')
+            table = soup.find('table', attrs = {"class" : "collection_table"})
             additional_rows = table.find_all('tr')
             self.rows.extend(additional_rows)
     def clean_title(self, string_title):
